@@ -60,7 +60,7 @@ const Navbar = ({ onLinkClick }: { onLinkClick: (href: string) => void }) => {
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
         <div className="flex items-center">
           <button onClick={() => onLinkClick('/')} className="flex items-center">
-            <img src="c_logo.png" alt="カイギョーズ" className="h-10 md:h-12 w-auto" referrerPolicy="no-referrer" />
+            <img src="logo.png" alt="カイギョーズ" className="h-10 md:h-12 w-auto" referrerPolicy="no-referrer" />
           </button>
         </div>
 
@@ -260,7 +260,7 @@ const PartnersSection = () => {
           >
             <div className="w-full max-w-[280px] md:max-w-[320px] aspect-[2/1] flex items-center justify-center bg-gray-900 rounded-3xl shadow-sm border border-gray-800 p-8 group-hover:shadow-xl transition-all duration-300">
               <div className="flex flex-col items-center">
-                <img src="logo.png" alt="Business Design" className="max-h-full" />
+                <span className="text-white font-bold text-2xl tracking-widest">BUSINESS DESIGN</span>
               </div>
             </div>
           </motion.div>
@@ -653,7 +653,7 @@ const Footer = ({ onLinkClick }: { onLinkClick: (href: string) => void }) => {
           <div className="col-span-2 flex flex-col items-center md:items-start text-center md:text-left">
             <div className="mb-6">
               <button onClick={() => onLinkClick('/')}>
-                <img src="c_logo.png" alt="カイギョーズ" className="h-20 md:h-24 w-auto" referrerPolicy="no-referrer" />
+                <img src="logo.png" alt="カイギョーズ" className="h-20 md:h-24 w-auto" referrerPolicy="no-referrer" />
               </button>
             </div>
             <p className="text-gray-500 max-w-md leading-relaxed">
@@ -801,41 +801,24 @@ const CaseStudiesPage = ({ onBack }: { onBack: () => void }) => {
               key={item.id}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="bg-white rounded-[32px] overflow-hidden shadow-sm border border-gray-100 hover:shadow-xl transition-all duration-500 flex flex-col p-8"
+              className="bg-white rounded-3xl border border-gray-100 shadow-sm overflow-hidden p-6 md:p-8"
             >
-              <div className="flex-grow flex flex-col">
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {item.tags.map(tag => (
-                    <span key={tag} className="text-[10px] font-bold text-gray-400 uppercase tracking-widest bg-gray-50 px-2 py-1 rounded-md">
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-                <span className="text-xs font-bold text-blue-600 uppercase tracking-widest mb-2 block">{item.category}</span>
-                <h3 className="text-xl font-bold text-gray-900 mb-4">{item.title}</h3>
-                <p className="text-sm text-gray-500 leading-relaxed mb-6 flex-grow">{item.description}</p>
-                <div className="pt-6 border-t border-gray-50">
-                  <span className="text-sm font-bold text-green-600 bg-green-50 px-4 py-2 rounded-full">
-                    {item.result}
-                  </span>
-                </div>
+              <span className="text-xs font-bold text-blue-600 bg-blue-50 px-3 py-1 rounded-full mb-4 inline-block">
+                {item.category}
+              </span>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">{item.title}</h3>
+              <p className="text-gray-500 text-sm mb-6 leading-relaxed">{item.description}</p>
+              <div className="flex flex-wrap gap-2 mb-6">
+                {item.tags.map(tag => (
+                  <span key={tag} className="text-[10px] bg-gray-100 text-gray-500 px-2 py-1 rounded-md">#{tag}</span>
+                ))}
+              </div>
+              <div className="pt-6 border-t border-gray-100 flex items-center justify-between">
+                <span className="text-sm font-medium text-gray-400">成果</span>
+                <span className="text-lg font-bold text-gray-900">{item.result}</span>
               </div>
             </motion.div>
           ))}
-        </div>
-
-        <div className="mt-20 bg-gray-900 rounded-[40px] p-12 text-center text-white">
-          <h2 className="text-2xl md:text-3xl font-bold mb-6">あなたの店舗も、利益率を改善しませんか？</h2>
-          <p className="text-gray-400 mb-10 max-w-2xl mx-auto">
-            現状の固定費が適正かどうか、無料で診断いたします。
-            無理な勧誘は一切ありませんので、お気軽にご相談ください。
-          </p>
-          <button 
-            onClick={onBack}
-            className="bg-white text-gray-900 px-10 py-4 rounded-full font-bold hover:bg-gray-100 transition-all"
-          >
-            無料で相談する
-          </button>
         </div>
       </div>
     </div>
@@ -843,36 +826,22 @@ const CaseStudiesPage = ({ onBack }: { onBack: () => void }) => {
 };
 
 export default function App() {
-  const [view, setView] = useState<'landing' | 'line' | 'case-studies'>('landing');
+  const [view, setView] = useState<'home' | 'contact' | 'cases'>('home');
 
   useEffect(() => {
-    if (view === 'line') {
-      window.scrollTo(0, 0);
-    }
+    window.scrollTo(0, 0);
   }, [view]);
 
   const handleLinkClick = (href: string) => {
     if (href === '/') {
-      setView('landing');
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      setView('home');
       return;
     }
-
     if (href === '#contact') {
-      setView('line');
+      setView('contact');
       return;
     }
-
-    if (view !== 'landing') {
-      setView('landing');
-      // Wait for landing to render then scroll
-      setTimeout(() => {
-        const element = document.querySelector(href);
-        if (element) {
-          element.scrollIntoView({ behavior: 'smooth' });
-        }
-      }, 100);
-    } else {
+    if (href.startsWith('#')) {
       const element = document.querySelector(href);
       if (element) {
         element.scrollIntoView({ behavior: 'smooth' });
@@ -880,52 +849,25 @@ export default function App() {
     }
   };
 
+  if (view === 'contact') {
+    return <LineContactView onBack={() => setView('home')} />;
+  }
+
+  if (view === 'cases') {
+    return <CaseStudiesPage onBack={() => setView('home')} />;
+  }
+
   return (
     <div className="min-h-screen bg-white font-sans text-gray-900 selection:bg-blue-100 selection:text-blue-900">
       <Navbar onLinkClick={handleLinkClick} />
       <main>
-        <AnimatePresence mode="wait">
-          {view === 'landing' && (
-            <motion.div
-              key="landing"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-            >
-              <Hero onConsultClick={() => setView('line')} />
-              {/* <AchievementsSection onViewAllClick={() => setView('case-studies')} /> */}
-              <AboutKaigyoSection />
-              {/* <PartnersSection /> */}
-              <SolutionSection />
-              <ProblemSection />
-              <PromisesSection />
-              <ProcessSection />
-              <AboutSection />
-            </motion.div>
-          )}
-
-          {view === 'case-studies' && (
-            <motion.div
-              key="case-studies"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-            >
-              <CaseStudiesPage onBack={() => setView('landing')} />
-            </motion.div>
-          )}
-
-          {view === 'line' && (
-            <motion.div
-              key="line"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-            >
-              <LineContactView onBack={() => setView('landing')} />
-            </motion.div>
-          )}
-        </AnimatePresence>
+        <Hero onConsultClick={() => setView('contact')} />
+        <AboutKaigyoSection />
+        <ProblemSection />
+        <SolutionSection />
+        <PromisesSection />
+        <ProcessSection />
+        <AboutSection />
       </main>
       <Footer onLinkClick={handleLinkClick} />
     </div>
