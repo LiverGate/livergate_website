@@ -9,7 +9,7 @@
     "preview": "vite preview --port 8080 --host 0.0.0.0",
     "clean": "rm -rf dist",
     "lint": "tsc --noEmit",
-    "start": "npm run preview"
+    "start": "NODE_ENV=production tsx server.ts"
   },
     "dependencies": {
     "@google/genai": "^1.29.0",

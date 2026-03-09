@@ -23,8 +23,7 @@ COPY --from=builder /app/vite.config.ts ./
 # Actually, I'll use tsx for simplicity as the environment supports it
 RUN npm install -g tsx
 
-EXPOSE 3000
-
+# Cloud Run will set the PORT environment variable
 ENV NODE_ENV=production
 
 CMD ["tsx", "server.ts"]
