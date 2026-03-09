@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import logo from './assets/logo.png';
+// import logo from './assets/logo.png';
+const logo = "https://picsum.photos/seed/kaigyo/200/100";
 import { 
   Menu, 
   X, 
