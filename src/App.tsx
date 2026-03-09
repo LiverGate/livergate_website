@@ -708,14 +708,12 @@ const LineContactView = ({ onBack }: { onBack: () => void }) => {
         </p>
         
         <div className="aspect-square w-64 mx-auto mb-8 bg-gray-50 rounded-3xl flex items-center justify-center border-2 border-dashed border-gray-200 p-4">
-          {/* Placeholder for QR Code */}
-          <div className="text-center">
-            <div className="w-48 h-48 bg-gray-200 rounded-xl flex flex-col items-center justify-center gap-2">
-              <div className="w-32 h-32 bg-white rounded-lg flex items-center justify-center">
-                <span className="text-xs font-bold text-gray-400">LINE QR CODE</span>
-              </div>
-            </div>
-          </div>
+          <img 
+            src="https://qr-official.line.me/gs/M_378igbsi_BW.png?oat_content=qr" 
+            alt="LINE QR Code" 
+            className="w-full h-full object-contain rounded-2xl"
+            referrerPolicy="no-referrer"
+          />
         </div>
 
         <button 
