@@ -545,7 +545,7 @@ const ProcessSection = () => {
         
         <div className="grid md:grid-cols-3 gap-10 md:gap-12 relative">
           {/* Connector Line */}
-          <div className="hidden md:block absolute top-1/2 left-0 w-full h-0.5 bg-gray-200 -translate-y-1/2 z-0" />
+          <div className="hidden md:block absolute top-10 left-0 w-full h-0.5 bg-gray-200 -translate-y-1/2 z-0" />
           
           {steps.map((s, i) => (
             <motion.div 
