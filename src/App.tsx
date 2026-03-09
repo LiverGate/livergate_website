@@ -45,7 +45,6 @@ const Navbar = ({ onLinkClick }: { onLinkClick: (href: string) => void }) => {
   const navLinks = [
     { name: 'カイギョーズとは', href: '#about-kaigyo' },
     { name: 'サービス', href: '#service' },
-    { name: '3つの約束', href: '#promises' },
     { name: '会社概要', href: '#about' },
   ];
 
@@ -60,7 +59,7 @@ const Navbar = ({ onLinkClick }: { onLinkClick: (href: string) => void }) => {
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
         <div className="flex items-center">
           <button onClick={() => onLinkClick('/')} className="flex items-center">
-            <img src="/logo.png" alt="カイギョーズ" className="h-10 md:h-12 w-auto" referrerPolicy="no-referrer" />
+            <img src="logo.png" alt="カイギョーズ" className="h-10 md:h-12 w-auto" />
           </button>
         </div>
 
@@ -162,8 +161,8 @@ const Hero = ({ onConsultClick }: { onConsultClick: () => void }) => {
             transition={{ delay: 0.8, duration: 1 }}
             className="text-base md:text-2xl text-gray-500 max-w-4xl mx-auto mb-10 leading-relaxed px-2 md:px-4"
           >
-            <span className="block">飲食店に必要なインフラ及び設備を比較検討し</span>
-            <span className="block">お客様にあったサービスを無料で紹介させていただく会社です。</span>
+            <span className="block">飲食店に必要なインフラ、設備、集客採用サービスを比較検討し</span>
+            <span className="block">お客様にあったサービスを無料で紹介させていただきます。</span>
           </motion.p>
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
@@ -204,8 +203,8 @@ const AboutKaigyoSection = () => {
 
             <div className="bg-gray-50 rounded-[40px] p-8 md:p-16 border border-gray-100 shadow-sm">
               <h3 className="text-2xl md:text-4xl font-bold text-gray-900 mb-8 leading-snug">
-                専門分野の「コンシェルジュ」を、<br className="hidden md:block" />
-                あなたの店舗に貸し出すサービスです。
+                各専門分野のコンシェルジュを<br className="hidden md:block" />
+                無料でご利用していただけるサービスです。
               </h3>
               <div className="max-w-2xl mx-auto">
                 <p className="text-lg md:text-xl text-gray-600 leading-relaxed mb-10">
@@ -218,11 +217,11 @@ const AboutKaigyoSection = () => {
                   </div>
                   <div className="flex items-center gap-2 text-gray-900 font-bold">
                     <CheckCircle2 size={20} className="text-green-600" />
-                    <span className="text-sm md:text-base">コスト削減の最大化</span>
+                    <span className="text-sm md:text-base">完全無料サポート</span>
                   </div>
                   <div className="flex items-center gap-2 text-gray-900 font-bold">
                     <CheckCircle2 size={20} className="text-purple-600" />
-                    <span className="text-sm md:text-base">完全無料サポート</span>
+                    <span className="text-sm md:text-base">コンシェルジュ直接対応</span>
                   </div>
                 </div>
               </div>
@@ -653,7 +652,7 @@ const Footer = ({ onLinkClick }: { onLinkClick: (href: string) => void }) => {
           <div className="col-span-2 flex flex-col items-center md:items-start text-center md:text-left">
             <div className="mb-6">
               <button onClick={() => onLinkClick('/')}>
-                <img src="/logo.png" alt="カイギョーズ" className="h-20 md:h-24 w-auto" referrerPolicy="no-referrer" />
+                <img src="logo.png" alt="カイギョーズ" className="h-20 md:h-24 w-auto" />
               </button>
             </div>
             <p className="text-gray-500 max-w-md leading-relaxed">
@@ -666,7 +665,6 @@ const Footer = ({ onLinkClick }: { onLinkClick: (href: string) => void }) => {
             <ul className="space-y-4 text-sm text-gray-500">
               <li><a href="#about-kaigyo" onClick={(e) => { e.preventDefault(); onLinkClick('#about-kaigyo'); }} className="hover:text-gray-900 transition-colors">カイギョーズとは</a></li>
               <li><a href="#service" onClick={(e) => { e.preventDefault(); onLinkClick('#service'); }} className="hover:text-gray-900 transition-colors">サービス一覧</a></li>
-              <li><a href="#promises" onClick={(e) => { e.preventDefault(); onLinkClick('#promises'); }} className="hover:text-gray-900 transition-colors">3つの約束</a></li>
               <li><a href="#process" onClick={(e) => { e.preventDefault(); onLinkClick('#process'); }} className="hover:text-gray-900 transition-colors">ご利用の流れ</a></li>
             </ul>
           </div>
@@ -863,7 +861,6 @@ export default function App() {
         <AboutKaigyoSection />
         <ProblemSection />
         <SolutionSection />
-        <PromisesSection />
         <ProcessSection />
         <AboutSection />
       </main>
