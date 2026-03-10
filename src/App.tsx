@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-// import logo from './assets/logo.png';
 import { 
   Menu, 
   X, 
@@ -60,7 +59,7 @@ const Navbar = ({ onLinkClick }: { onLinkClick: (href: string) => void }) => {
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
         <div className="flex items-center">
           <button onClick={() => onLinkClick('/')} className="flex items-center">
-            <img src="/logo.png" alt="カイギョーズ" className="h-10 md:h-12 w-auto" />
+            <img src="https://storage.googleapis.com/livergate-assets/kaygyoz.png" alt="カイギョーズ" className="h-10 md:h-12 w-auto" />
           </button>
         </div>
 
@@ -653,7 +652,7 @@ const Footer = ({ onLinkClick }: { onLinkClick: (href: string) => void }) => {
           <div className="col-span-2 flex flex-col items-center md:items-start text-center md:text-left">
             <div className="mb-6">
               <button onClick={() => onLinkClick('/')}>
-                <img src="/logo.png" alt="カイギョーズ" className="h-20 md:h-24 w-auto" />
+                <img src="https://storage.googleapis.com/livergate-assets/kaygyoz.png" alt="カイギョーズ" className="h-20 md:h-24 w-auto" />
               </button>
             </div>
             <p className="text-gray-500 max-w-md leading-relaxed">
