@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import logo from './assets/logo.png';
+// import logo from './assets/logo.png';
 import { 
   Menu, 
   X, 
@@ -60,7 +60,7 @@ const Navbar = ({ onLinkClick }: { onLinkClick: (href: string) => void }) => {
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
         <div className="flex items-center">
           <button onClick={() => onLinkClick('/')} className="flex items-center">
-            <img src={logo} alt="カイギョーズ" className="h-10 md:h-12 w-auto" referrerPolicy="no-referrer" />
+            <img src="/logo.png" alt="カイギョーズ" className="h-10 md:h-12 w-auto" />
           </button>
         </div>
 
@@ -152,7 +152,7 @@ const Hero = ({ onConsultClick }: { onConsultClick: () => void }) => {
             className="text-3xl sm:text-5xl md:text-7xl font-bold tracking-tight text-gray-900 mb-6 leading-[1.3] md:leading-[1.2]"
           >
             <span className="block">私たちのサービスは</span>
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-red-500 via-yellow-500 via-green-500 via-blue-500 to-purple-500 block mt-1 md:mt-2">
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#ef4444] via-[#eab308] via-[#22c55e] via-[#3b82f6] to-[#a855f7] block mt-1 md:mt-2">
               利益に直結します。
             </span>
           </motion.h1>
@@ -616,7 +616,7 @@ const AboutSection = () => {
             >
               <motion.div 
                 whileHover={{ scale: 1.05 }}
-                className="inline-block p-[1px] rounded-full bg-gradient-to-tr from-red-500 via-yellow-500 via-green-500 via-blue-500 to-purple-500 mb-6 md:mb-8"
+                className="inline-block p-[1px] rounded-full bg-gradient-to-tr from-[#ef4444] via-[#eab308] via-[#22c55e] via-[#3b82f6] to-[#a855f7] mb-6 md:mb-8"
               >
                 <div className="bg-gray-900 rounded-full px-6 py-3 md:px-8 md:py-4">
                   <span className="text-xl md:text-2xl font-bold tracking-tight">LiverGate</span>
@@ -653,7 +653,7 @@ const Footer = ({ onLinkClick }: { onLinkClick: (href: string) => void }) => {
           <div className="col-span-2 flex flex-col items-center md:items-start text-center md:text-left">
             <div className="mb-6">
               <button onClick={() => onLinkClick('/')}>
-                <img src={logo} alt="カイギョーズ" className="h-20 md:h-24 w-auto" referrerPolicy="no-referrer" />
+                <img src="/logo.png" alt="カイギョーズ" className="h-20 md:h-24 w-auto" />
               </button>
             </div>
             <p className="text-gray-500 max-w-md leading-relaxed">
