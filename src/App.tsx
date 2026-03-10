@@ -653,7 +653,7 @@ const Footer = ({ onLinkClick }: { onLinkClick: (href: string) => void }) => {
           <div className="col-span-2 flex flex-col items-center md:items-start text-center md:text-left">
             <div className="mb-6">
               <button onClick={() => onLinkClick('/')}>
-                <img src="/kaygyoz.png" alt="カイギョーズ" className="h-20 md:h-24 w-auto" referrerPolicy="no-referrer" />
+                <img src="public/kaygyoz.png" alt="カイギョーズ" className="h-20 md:h-24 w-auto" referrerPolicy="no-referrer" />
               </button>
             </div>
             <p className="text-gray-500 max-w-md leading-relaxed">
