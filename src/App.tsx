@@ -861,14 +861,14 @@ export default function App() {
             "@context": "https://schema.org",
             "@type": "WebSite",
             "name": "カイギョーズ",
-            "alternateName": ["Kaygyoz", "カイギョウ", "株式会社LiverGate"],
+            "alternateName": ["Kaygyoz", "カイギョウ", "カイギョー", "kaigyo", "開業", "株式会社LiverGate"],
             "url": "https://ais-pre-k42smc2cprknbmm6qaajio-474926124575.asia-east1.run.app/"
           },
           {
             "@context": "https://schema.org",
             "@type": "Service",
             "name": "カイギョーズ",
-            "alternateName": ["Kaygyoz", "カイギョウ", "飲食店開業支援"],
+            "alternateName": ["Kaygyoz", "カイギョウ", "カイギョー", "kaigyo", "開業", "飲食店開業支援"],
             "provider": {
               "@type": "Organization",
               "name": "株式会社LiverGate",
