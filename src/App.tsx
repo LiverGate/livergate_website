@@ -59,7 +59,7 @@ const Navbar = ({ onLinkClick }: { onLinkClick: (href: string) => void }) => {
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
         <div className="flex items-center">
           <button onClick={() => onLinkClick('/')} className="flex items-center">
-            <img src="https://res.cloudinary.com/duismpfyp/image/upload/v1773153440/kaygyoz_vdeoj5.png" alt="カイギョーズ" className="h-10 md:h-12 w-auto" />
+            <img src="https://res.cloudinary.com/duismpfyp/image/upload/v1773191768/w-kaygyoz_luldlm.jpg" alt="カイギョーズ" className="h-10 md:h-12 w-auto" />
           </button>
         </div>
 
