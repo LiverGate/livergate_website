@@ -856,21 +856,30 @@ export default function App() {
   return (
     <div className="min-h-screen bg-white font-sans text-gray-900 selection:bg-blue-100 selection:text-blue-900">
       <script type="application/ld+json">
-        {JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "Service",
-          "name": "カイギョーズ",
-          "alternateName": ["Kaygyoz", "飲食店開業支援"],
-          "provider": {
-            "@type": "Organization",
-            "name": "株式会社LiverGate",
-            "alternateName": ["LiverGate", "ライバーゲート"],
+        {JSON.stringify([
+          {
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "name": "カイギョーズ",
+            "alternateName": ["Kaygyoz", "株式会社LiverGate"],
             "url": "https://ais-pre-k42smc2cprknbmm6qaajio-474926124575.asia-east1.run.app/"
           },
-          "description": "株式会社LiverGate（ライバーゲート）が運営する飲食店オーナー様のための専門コンシェルジュサービス。飲食店の開業や運営に必要なインフラ・固定費の最適化をサポート。",
-          "areaServed": "JP",
-          "serviceType": "飲食店支援コンシェルジュ"
-        })}
+          {
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "name": "カイギョーズ",
+            "alternateName": ["Kaygyoz", "飲食店開業支援"],
+            "provider": {
+              "@type": "Organization",
+              "name": "株式会社LiverGate",
+              "alternateName": ["LiverGate", "ライバーゲート"],
+              "url": "https://ais-pre-k42smc2cprknbmm6qaajio-474926124575.asia-east1.run.app/"
+            },
+            "description": "株式会社LiverGate（ライバーゲート）が運営する飲食店オーナー様のための専門コンシェルジュサービス。飲食店の開業や運営に必要なインフラ・固定費の最適化をサポート。",
+            "areaServed": "JP",
+            "serviceType": "飲食店支援コンシェルジュ"
+          }
+        ])}
       </script>
       <Navbar onLinkClick={handleLinkClick} />
       <main>
